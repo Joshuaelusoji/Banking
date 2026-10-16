@@ -1,4 +1,3 @@
-
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
@@ -34,14 +33,12 @@ declare type User = {
   dwollaCustomerId: string;
   firstName: string;
   lastName: string;
-  name: string;
   address1: string;
   city: string;
   state: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
-  avatar?: string;
 };
 
 declare type NewUserParams = {
@@ -62,7 +59,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  shareableId: string;
+  sharableId: string;
 };
 
 declare type Transaction = {
@@ -77,6 +74,7 @@ declare type Transaction = {
   category: string;
   date: string;
   image: string;
+  type: string;
   $createdAt: string;
   channel: string;
   senderBankId: string;
@@ -90,13 +88,13 @@ declare type Bank = {
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-  shareableId: string;
+  sharableId: string;
 };
 
 declare type AccountTypes =
   | "depository"
   | "credit"
-  | "loan"
+  | "loan "
   | "investment"
   | "other";
 
@@ -180,13 +178,22 @@ declare interface PlaidLinkProps {
   dwollaCustomerId?: string;
 }
 
+// declare type User = sdk.Models.Document & {
+//   accountId: string;
+//   email: string;
+//   name: string;
+//   items: string[];
+//   accessToken: string;
+//   image: string;
+// };
+
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
 }
 
 declare interface BankDropdownProps {
   accounts: Account[];
-  setValue?: import("react-hook-form").UseFormSetValue<any>;
+  setValue?: UseFormSetValue<any>;
   otherStyles?: string;
 }
 
@@ -195,7 +202,7 @@ declare interface BankTabItemProps {
   appwriteItemId?: string;
 }
 
-declare interface TotalBalanceBoxProps {
+declare interface TotlaBalanceBoxProps {
   accounts: Account[];
   totalBanks: number;
   totalCurrentBalance: number;
@@ -203,16 +210,15 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
-  type?: "mobile" | "desktop";
 }
 
 declare interface RightSidebarProps {
   user: User;
   transactions: Transaction[];
-  banks: Bank[];
+  banks: Bank[] & Account[];
 }
 
-declare interface SidebarProps {
+declare interface SiderbarProps {
   user: User;
 }
 
@@ -249,7 +255,6 @@ declare interface PaymentTransferFormProps {
 }
 
 // Actions
-
 declare interface getAccountsProps {
   userId: string;
 }
@@ -267,10 +272,10 @@ declare interface getTransactionsProps {
 }
 
 declare interface CreateFundingSourceOptions {
-  customerId: string;
-  fundingSourceName: string;
-  plaidToken: string;
-  _links: object;
+  customerId: string; // Dwolla Customer ID
+  fundingSourceName: string; // Dwolla Funding Source Name
+  plaidToken: string; // Plaid Account Processor Token
+  _links: object; // Dwolla On Demand Authorization Link
 }
 
 declare interface CreateTransactionProps {
@@ -307,7 +312,7 @@ declare interface createBankAccountProps {
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
-  shareableId: string;
+  sharableId: string;
 }
 
 declare interface getBanksProps {
@@ -320,12 +325,4 @@ declare interface getBankProps {
 
 declare interface getBankByAccountIdProps {
   accountId: string;
-}
-
-declare interface QuickAction {
-  id: string;
-  name: string;
-  icon: import("lucide-react").LucideIcon;
-  color: string;
-  backgroundColor: string;
 }
