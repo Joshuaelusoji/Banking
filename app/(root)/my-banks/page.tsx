@@ -3,8 +3,9 @@ import HeaderBox from '@/components/HeaderBox'
 import { getAccounts } from '@/lib/actions/bank.actions';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
 import React from 'react'
+import {Account} from "node-appwrite";
 
-const MyBanks = async () => {
+const MyAccounts = async () => {
   const loggedIn = await getLoggedInUser();
   const accounts = await getAccounts({ 
     userId: loggedIn.$id 
@@ -14,7 +15,7 @@ const MyBanks = async () => {
     <section className='flex'>
       <div className="my-banks">
         <HeaderBox 
-          title="My Bank Accounts"
+          title="My Accounts"
           subtext="Effortlessly manage your banking activites."
         />
 
@@ -37,4 +38,4 @@ const MyBanks = async () => {
   )
 }
 
-export default MyBanks
+export default MyAccounts
