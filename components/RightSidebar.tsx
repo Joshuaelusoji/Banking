@@ -20,7 +20,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
                       width={96}
                       height={96}
                       alt={`${user.firstName} profile photo`}
-                      className="size-full rounded-full object-cover"
+                      className="size-full scale-125 rounded-full object-cover"
                   />
               ) : (
                   <span className="text-5xl font-bold text-blue-500">{user.firstName[0]}</span>

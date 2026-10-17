@@ -26,9 +26,9 @@ if (process.env.NODE_ENV === 'production' && process.env.DEV_BYPASS_AUTH === 'tr
 const DEV_USER = {
   $id: 'dev-user',
   userId: 'dev-user',
-  firstName: 'Joshua',
-  lastName: 'Elusoji',
-  email: 'joshuaelusoji7@gmail.com',
+  firstName: 'Maria',
+  lastName: 'Johnson',
+  email: 'mariajohnson7105@gmail.com',
   avatar: '/images/avatar.png',
   address1: '1 Test Street',
   city: 'Test City',

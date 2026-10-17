@@ -1,0 +1,15 @@
+{"_e":"root:init","_t":1791399205047,"format":"v0-jsonl","version":"57.0.23"}
+{"_e":"env:mode","_t":1791399205048,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791399205049,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791399205275,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791399205586,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791399205765,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791399206058,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1791540362005,"format":"v0-jsonl","version":"57.0.23"}
+{"_e":"env:mode","_t":1791540362005,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791540362007,"mode":"development","files":["../../../.env.local"],"env":{"APPWRITE_BANK_COLLECTION_ID":"","APPWRITE_DATABASE_ID":"Mercury","APPWRITE_ITEM_COLLECTION_ID":"","APPWRITE_TRANSACTION_COLLECTION_ID":"","APPWRITE_USER_COLLECTION_ID":"","DWOLLA_BASE_URL":"","DWOLLA_ENV":"sandbox","DWOLLA_KEY":"","DWOLLA_SECRET":"","NEXT_APPWRITE_KEY":"standard_fb28a4e202df4844c87618adff9ade3494ecc49775a7bd507ae9faae8c00e26afe45d702c1d8f9387e03b4825ca4b0be88f43d5ac267d6f4fef29c104a66d41795fb77c6111af1","NEXT_PUBLIC_APPWRITE_ENDPOINT":"https://fra.cloud.appwrite.io/v1","NEXT_PUBLIC_APPWRITE_PROJECT":"6ac7609c00077c324365","NEXT_PUBLIC_SITE_URL":"http://localhost:3000","PLAID_COUNTRY_CODES":"","PLAID_ENV":"","PLAID_PRODUCTS":"","PLAID_SECRET":"","ec7b4834e8a30e5bbbab73a278aff07e11c64c2cb25f742af62c72c4a02a70063a3d8cdabba054dd6836aa170c13ff1aa142167e83121cb499\n\n#PLAID\nPLAID_CLIENT_ID":""}}
+{"_e":"devserver:start","_t":1791540362182,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791540362433,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791540362594,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791540362847,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1791540375014,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}

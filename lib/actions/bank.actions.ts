@@ -26,7 +26,7 @@ const MOCK_ACCOUNTS = [
   {
     id: "dev-account-1",
     availableBalance: 450,
-    currentBalance: 500,
+    currentBalance: 750,
     institutionId: "dev-institution-1",
     name: "Plaid Checking",
     officialName: "Plaid Gold Standard 0% Interest Checking",
@@ -34,12 +34,12 @@ const MOCK_ACCOUNTS = [
     type: "depository",
     subtype: "checking",
     appwriteItemId: "dev-bank-1",
-    sharaebleId: "dev-shareable-1",
+    shareableId: "dev-shareable-1",
   },
   {
     id: "dev-account-2",
     availableBalance: 780,
-    currentBalance: 800,
+    currentBalance: 1300,
     institutionId: "dev-institution-2",
     name: "Plaid Saving",
     officialName: "Plaid Silver Standard 0.1% Interest Saving",
@@ -47,7 +47,7 @@ const MOCK_ACCOUNTS = [
     type: "depository",
     subtype: "savings",
     appwriteItemId: "dev-bank-2",
-    sharaebleId: "dev-shareable-2",
+    shareableId: "dev-shareable-2",
   },
   {
     id: "dev-account-3",
@@ -60,7 +60,7 @@ const MOCK_ACCOUNTS = [
     type: "credit",
     subtype: "credit card",
     appwriteItemId: "dev-bank-3",
-    sharaebleId: "dev-shareable-3",
+    shareableId: "dev-shareable-3",
   },
 ];
 
@@ -118,7 +118,7 @@ export const getAccounts = async ({ userId }: getAccountsProps) => {
             type: accountData.type as string,
             subtype: accountData.subtype! as string,
             appwriteItemId: bank.$id,
-            sharaebleId: bank.shareableId,
+            shareableId: bank.shareableId,
           };
 
           return account;
@@ -218,27 +218,23 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
 };
 
 // Get bank info
-export const getInstitution = async ({
-                                       institutionId,
-                                     }: getInstitutionProps) => {
+export const getInstitution = async ({ institutionId }: getInstitutionProps) => {
   try {
     const institutionResponse = await plaidClient.institutionsGetById({
       institution_id: institutionId,
       country_codes: ["US"] as CountryCode[],
     });
 
-    const intitution = institutionResponse.data.institution;
+    const institution = institutionResponse.data.institution;
 
-    return parseStringify(intitution);
+    return parseStringify(institution);
   } catch (error) {
     console.error("An error occurred while getting the accounts:", error);
   }
 };
 
 // Get transactions
-export const getTransactions = async ({
-                                        accessToken,
-                                      }: getTransactionsProps) => {
+export const getTransactions = async ({ accessToken }: getTransactionsProps) => {
   let hasMore = true;
   let transactions: any = [];
 
