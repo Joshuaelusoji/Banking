@@ -1,6 +1,6 @@
 import { CircleHelp, Bell, LogOut } from "lucide-react";
 
-export const quickActions: QuickAction[] = [
+export const quickActions: QuickActionProps[] = [
     {
         id: "help",
         name: "help",

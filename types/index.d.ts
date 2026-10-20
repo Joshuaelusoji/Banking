@@ -1,3 +1,4 @@
+
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
@@ -5,17 +6,14 @@ declare type SearchParamProps = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// ========================================
-
 declare type SignUpParams = {
   firstName: string;
   lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
   email: string;
   password: string;
 };
@@ -29,16 +27,14 @@ declare type User = {
   $id: string;
   email: string;
   userId: string;
-  dwollaCustomerUrl: string;
-  dwollaCustomerId: string;
   firstName: string;
   lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  avatar?: string;
 };
 
 declare type NewUserParams = {
@@ -74,7 +70,6 @@ declare type Transaction = {
   category: string;
   date: string;
   image: string;
-  type: string;
   $createdAt: string;
   channel: string;
   senderBankId: string;
@@ -85,18 +80,16 @@ declare type Bank = {
   $id: string;
   accountId: string;
   bankId: string;
-  accessToken: string;
-  fundingSourceUrl: string;
   userId: string;
   shareableId: string;
 };
 
 declare type AccountTypes =
-  | "depository"
-  | "credit"
-  | "loan "
-  | "investment"
-  | "other";
+    | "depository"
+    | "credit"
+    | "loan"
+    | "investment"
+    | "other";
 
 declare type Category = "Food and Drink" | "Travel" | "Transfer";
 
@@ -112,28 +105,7 @@ declare type Receiver = {
 };
 
 declare type TransferParams = {
-  sourceFundingSourceUrl: string;
-  destinationFundingSourceUrl: string;
   amount: string;
-};
-
-declare type AddFundingSourceParams = {
-  dwollaCustomerId: string;
-  processorToken: string;
-  bankName: string;
-};
-
-declare type NewDwollaCustomerParams = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  type: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
 };
 
 declare interface CreditCardProps {
@@ -171,21 +143,6 @@ declare interface PaginationProps {
   page: number;
   totalPages: number;
 }
-
-declare interface PlaidLinkProps {
-  user: User;
-  variant?: "primary" | "ghost";
-  dwollaCustomerId?: string;
-}
-
-// declare type User = sdk.Models.Document & {
-//   accountId: string;
-//   email: string;
-//   name: string;
-//   items: string[];
-//   accessToken: string;
-//   image: string;
-// };
 
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
@@ -255,7 +212,6 @@ declare interface PaymentTransferFormProps {
   accounts: Account[];
 }
 
-// Actions
 declare interface getAccountsProps {
   userId: string;
 }
@@ -266,17 +222,6 @@ declare interface getAccountProps {
 
 declare interface getInstitutionProps {
   institutionId: string;
-}
-
-declare interface getTransactionsProps {
-  accessToken: string;
-}
-
-declare interface CreateFundingSourceOptions {
-  customerId: string; // Dwolla Customer ID
-  fundingSourceName: string; // Dwolla Funding Source Name
-  plaidToken: string; // Plaid Account Processor Token
-  _links: object; // Dwolla On Demand Authorization Link
 }
 
 declare interface CreateTransactionProps {
@@ -302,20 +247,6 @@ declare interface getUserInfoProps {
   userId: string;
 }
 
-declare interface exchangePublicTokenProps {
-  publicToken: string;
-  user: User;
-}
-
-declare interface createBankAccountProps {
-  accessToken: string;
-  userId: string;
-  accountId: string;
-  bankId: string;
-  fundingSourceUrl: string;
-  sharableId: string;
-}
-
 declare interface getBanksProps {
   userId: string;
 }
@@ -326,4 +257,12 @@ declare interface getBankProps {
 
 declare interface getBankByAccountIdProps {
   accountId: string;
+}
+
+declare interface QuickActionProps {
+  id: string;
+  name: string;
+  icon: string;
+  color: string;
+  backgroundColor: string;
 }
